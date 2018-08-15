@@ -20,12 +20,12 @@ hi Search cterm=NONE ctermbg=darkcyan ctermfg=NONE guibg=darkred guifg=white
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 set viminfo='100,<50,s10
 au FileType scala  :setl et ts=2 sw=2 st=2|:let @/ = "  "
-au FileType sh     :setl et ts=2 sw=2 st=2 softtabstop=4|:let @/ = "  "
+au FileType sh     :setl et ts=2 sw=2 st=2 softtabstop=2|:let @/ = "  "
 au FileType sql    :setl et ts=4 sw=4 st=4|:let @/ = "    "
-au FileType python :setl et ts=4 sw=4 st=4 textwidth=99 colorcolumn=+1
+au FileType python :setl et ts=4 sw=4 st=4 softtabstop=4 textwidth=99 colorcolumn=+1
    \ |:let @/ = "^\\(    \\)\\+\\| \\+$"|hi ColorColumn cterm=NONE ctermbg=darkyellow ctermfg=NONE guibg=darkred guifg=white
 au FileType pyrex :setl et ts=4 sw=4 st=4 textwidth=99 colorcolumn=+1
-   \ |:let @/ = "^\\(    \\)\\+\\| \\+ $"|hi ColorColumn cterm=NONE ctermbg=darkyellow ctermfg=NONE guibg=darkred guifg=white
+   \ |:let @/ = "^\\(    \\)\\+\\| \\+$"|hi ColorColumn cterm=NONE ctermbg=darkyellow ctermfg=NONE guibg=darkred guifg=white
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 set hls
 
